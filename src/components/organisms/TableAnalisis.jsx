@@ -1,27 +1,24 @@
 // src/components/organisms/TableAnalisis.jsx
 import React from 'react';
-import TableRowAnalisis from '../molecules/TableRowAnalisis';
-import { Table, TableHeader, TableColumn, TableBody } from "@nextui-org/react";
+import PaginatedTable from './PaginatedTable';
 
 const TableAnalisis = ({ data }) => {
+  const columns = ["CODIGO", "FECHA", "ANALISTA", "IDENTIFICACION", "MUESTRA", "TIPO ANALISIS", "ESTADO", "CODE TIPO"];
+
   return (
-    <Table aria-label="Analysis Data Table">
-      <TableHeader>
-        <TableColumn>CODIGO</TableColumn>
-        <TableColumn>FECHA</TableColumn>
-        <TableColumn>ANALISTA</TableColumn>
-        <TableColumn>IDENTIFICACION</TableColumn>
-        <TableColumn>MUESTRA</TableColumn>
-        <TableColumn>TIPO ANALISIS</TableColumn>
-        <TableColumn>ESTADO</TableColumn> 
-        <TableColumn>CODE TIPO</TableColumn>
-      </TableHeader>
-      <TableBody items={data}>
-        {(item) => (
-          <TableRowAnalisis key={item.codigo} row={item} />
-        )}
-      </TableBody>
-    </Table>
+    <PaginatedTable
+      columns={columns}
+      data={data.map(row => ({
+        codigo: row.codigo,
+        fecha: new Date(row.fecha).toLocaleDateString(),
+        analista: row.analista,
+        identificacion: row.identificacion,
+        muestra: row.muestra,
+        tipo_analisis: row.tipo_analisis,
+        estado: row.estado,
+        codeTipo: row.codeTipo
+      }))}
+    />
   );
 };
 

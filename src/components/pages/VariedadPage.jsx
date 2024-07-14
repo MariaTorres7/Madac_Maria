@@ -14,9 +14,9 @@ export const VariedadPage = () => {
 
   return (
     <MainLayout>
-      <div className=''>
+      {/* <div className=''>
         <h1 className='text-3xl font-bold'>Bienvenido a Variedades</h1>
-      </div>
+      </div> */}
       <TableVariedades data={variedadesData}/>
     </MainLayout>
   );

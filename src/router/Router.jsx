@@ -17,7 +17,7 @@ import { ReportePage } from '../components/pages/ReportePage'
 export const AppRouter = () => {
     return (
 
-        <SidebarProvider>
+      
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
                 <Route path="/" element={
@@ -90,7 +90,7 @@ export const AppRouter = () => {
                 } />
 
             </Routes>
-        </SidebarProvider>
+    
 
     )
 }

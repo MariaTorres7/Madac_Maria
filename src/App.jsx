@@ -1,22 +1,16 @@
-import React from 'react'
-import { AuthProvider } from './context/AuthContext'
-import { AppRouter } from './router/Router'
-import { BrowserRouter } from 'react-router-dom'
-import { TableProvider } from './context/TableContext'
-
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { AppRouter } from './router/Router';
+import { ProviderContext } from './components/configs/ProviderContext';
 
 const App = () => {
   return (
-
     <BrowserRouter>
-      <AuthProvider>
-        <TableProvider>
+      <ProviderContext>
         <AppRouter />
-        </TableProvider>
-      </AuthProvider>
+      </ProviderContext>
     </BrowserRouter>
+  );
+};
 
-  )
-}
-
-export default App
+export default App;
