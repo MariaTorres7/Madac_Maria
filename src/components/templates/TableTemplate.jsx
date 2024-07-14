@@ -15,9 +15,7 @@ export default function TableTemplate() {
 
   return (
     <div>
-      <h1>Table Análisis</h1>
       <TableAnalisis data={analisisData} />
-      <h1>Table Variedades</h1>
       <TableVariedades data={variedadesData} />
     </div>
   );

@@ -9,7 +9,7 @@ const Navbar = () => {
     const { user, logout } = useAuth();
 
     return (
-        <div className="flex justify-between items-center sticky top-0 px-4 py-1 bg-slate-300 text-black">
+        <div className="flex justify-between items-center z-20 sticky top-0 px-4 py-1 bg-slate-300 text-black">
             <Logo />
             <div className="flex space-x-4">
                 <NavbarItem icon="Home" label="Home" path="/" />
